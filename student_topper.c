@@ -5,29 +5,29 @@ struct student_record {
     float total_marks;
 };
 int main() {
-    struct student_record students[5];
+    struct student_record s[5];
     int i, topper_index = 0;
-    // Input student details
+    // Reading data of 5 students
     for(i = 0; i < 5; i++) {
-        printf("Enter details of student %d:\n", i + 1);
-        printf("Name: ");
-        scanf("%s", students[i].name);
-        printf("Roll Number: ");
-        scanf("%d", &students[i].roll_number);
-        printf("Total Marks: ");
-        scanf("%f", &students[i].total_marks);
-        printf("\n");
+        printf("\nEnter details for student %d:\n", i + 1);
+        printf("Enter name: ");
+        scanf("%s", s[i].name);
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].roll_number);
+        printf("Enter total marks: ");
+        scanf("%f", &s[i].total_marks);
     }
-    // Find the topper
-    for(i = 1; i < 5; i++)  {
-        if(students[i].total_marks > students[topper_index].total_marks)
+    // Finding the topper
+    for(i = 1; i < 5; i++) {
+        if(s[i].total_marks > s[topper_index].total_marks) {
             topper_index = i;
+        }
     }
-    // Display topper details
-    printf("Topper Details:\n");
-    printf("Name: %s\n", students[topper_index].name);
-    printf("Roll Number: %d\n", students[topper_index].roll_number);
-    printf("Total Marks: %.2f\n", students[topper_index].total_marks);
+    // Displaying the topper
+    printf("\n===== Topper Details =====\n");
+    printf("Name: %s\n", s[topper_index].name);
+    printf("Roll Number: %d\n", s[topper_index].roll_number);
+    printf("Total Marks: %.2f\n", s[topper_index].total_marks);
 
     return 0;
 }
